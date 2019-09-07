@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block header %}
+    <header class="masthead" style="background-image: url({{ url_for('static', filename='img/stenata.gif') }})">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="page-heading">
+                        <h1>Přidat Článek</h1>
+                        <span class="subheading">Tady můžeš přidat článek</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <p>Vyplň a ulož článek na stránky</p>
+
+                {#                <form name="sentMessage" id="contactForm" method="post">#}
+                <form method="post" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            {{ form.title.label }}
+                            {% if form.title.errors %}
+                                {{ form.title(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in  form.title.errors %}
+                                        <span> {{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.title(class="form-control", placeholder="Titulek") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group floating-label-form-group controls">
+                            {{ form.subtitle.label }}
+                            {% if form.subtitle.errors %}
+                                {{ form.subtitle(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in  form.subtitle.errors %}
+                                        <span> {{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.subtitle(class="form-control", placeholder="Podtitulek") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group floating-label-form-group controls">
+                            {{ form.author.label }}
+                            {% if form.author.errors %}
+                                {{ form.author(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in  form.author.errors %}
+                                        <span> {{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.author(class="form-control", placeholder="Autor") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group floating-label-form-group controls">
+                            {{ form.content.label }}
+                            {% if form.content.errors %}
+                                {{ form.content(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in  form.content.errors %}
+                                        <span> {{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.content(class="form-control", placeholder="Obsah") }}
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-primary") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
