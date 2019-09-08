@@ -33,7 +33,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Hezky Český</a>
+        <a class="navbar-brand" href="{{ url_for('main.index') }}">Hezky Český</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -43,19 +43,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">Domů</a>
+                    <a class="nav-link" href="{{ url_for('main.index') }}">Domů</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('about') }}">O nás</a>
+                    <a class="nav-link" href="{{ url_for('main.about') }}">O nás</a>
                 </li>
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link" href="{{ url_for('post') }}">Sample Post</a>#}
-{#                </li>#}
+                {#                <li class="nav-item">#}
+                {#                    <a class="nav-link" href="{{ url_for('post') }}">Sample Post</a>#}
+                {#                </li>#}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('contact') }}">Kontakt</a>
+                    <a class="nav-link" href="{{ url_for('main.contact') }}">Kontakt</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('add_post') }}">Přidat článek</a>
+                    <a class="nav-link" href="{{ url_for('main.add_post') }}">Přidat článek</a>
                 </li>
             </ul>
         </div>
